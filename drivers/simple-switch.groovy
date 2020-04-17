@@ -13,10 +13,14 @@ metadata {
 
 def off() {
     log.info "off..."
+    sendEvent(name: "switch", value: "off", isStateChange: true)
+    state."switch" = "off"
 }
 
 def on() {
     log.info "on..."
+    sendEvent(name: "switch", value: "on", isStateChange: true)
+    state."switch" = "on"
 }
 
 def installed() {
